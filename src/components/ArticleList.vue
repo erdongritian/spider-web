@@ -90,15 +90,16 @@
                 console.log(`每页 ${val} 条`);
             },
             handleCurrentChange(val) {
+                this.searchContent=this.$route.params.search;
                 let postData={
                     "content": this.searchContent,
                     "page": val,
                     "pageSize": this.pageSize
                 };
+                console.log(postData);
                 this.fetchData(postData);
             },
             async fetchData (postData) {
-                this.searchContent=this.$route.params.search;
                 let res = await fetch('searchbycontent',postData,'POST');
                 this.articleList=res.data.resultList;
                 this.totalSize=res.data.total;

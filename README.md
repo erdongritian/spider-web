@@ -1,1 +1,1 @@
-启动 ：npm run server
+启动 ：npm run serve
