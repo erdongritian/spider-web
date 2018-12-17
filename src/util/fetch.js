@@ -1,6 +1,6 @@
 
 export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
-  let baseUrl="http://124.89.8.228:8100/wecare/elastic/";
+  let baseUrl="http://192.168.11.181:9090/";
 	type = type.toUpperCase();
 	url = baseUrl + url;
 

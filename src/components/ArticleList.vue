@@ -16,29 +16,25 @@
                 <td>
                     <div class="cell">
                         <div>
-                        <div class="article_thumb_image">
-                            <img :src="art.icon_url">
+                        <div class="article_thumb_image"  v-if="art.iconUrl">
+                            <img :src="art.iconUrl">
                         </div>
 
                         <div class="aricle_item_info">
                             <div class="title">
                                 <!--<a href="javascript:void(0);" target="_blank" title="art.title" v-on:click="goToDatail(art._id)"><span v-html="art.title"></span></a>-->
-                                <router-link :title="art.title" :to="{ name: 'articleDetail', params: { articleId: art._id }}"><span v-html="art.title"></span></router-link>
+                                <router-link :title="art.title" :to="{ name: 'articleDetail', params: { articleId: art.id }}"><span v-html="art.title"></span></router-link>
                             </div>
                             <div class="tip">
-                                <span>作者：<span v-for="author in art.authors">{{author}},</span></span>
-                  <span>发布日期：{{art.publish_time}}
+                                <span>{{art.brief}}</span><br/>
+                  <span>发布日期：{{art.publishTime}}
                   </span>
                             </div>
                         </div>
                         </div>
-                        <div class="content_str">
-                            <span v-html="art.content_str"></span>
+                        <div class="content_str" v-if="art.contentStr">
+                            <span v-html="art.contentStr"></span>
                         </div>
-
-
-
-
                     </div>
                 </td>
             </tr>
@@ -168,8 +164,8 @@
         text-align: left;
     }
     .article_thumb_image {
-        width: 75px;
-        height: 60px;
+        width: 150px;
+        height: 90px;
         float: left;
     }
     .aricle_item_info .title {

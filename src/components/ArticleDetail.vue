@@ -5,10 +5,9 @@
                 <table cellspacing="0" cellpadding="0" border="0" class="el-table__header" style="width: 100%;">
                     <thead class="has-gutter">
                     <tr class=""><th class="is-leaf"><div class="cell"><h1>{{title}}</h1>
-                        <div><span>作者：{{authors}} </span><span v-if="translator"> 译者：{{translator}}</span> 发布于 {{publishTime}}. </div><br/>
+                        <div><span v-if="authors">作者：{{authors}} </span>  发布于 {{publishTime}}. </div><br/>
                         <div>原文地址 <a :href="url" target="_blank">{{url}}</a> </div><br/>
-                        <div>主题 {{topicStr}} </div><br/>
-                        <div>估计阅读时间: {{readTime}}分钟</div>
+                        <div>主题 {{topicStr}} </div>
                     </div></th>
                     </tr></thead>
                 </table>
@@ -50,14 +49,13 @@
                 let requestUrl='searchbyid/'+this.$route.params.articleId
                 let res = await fetch(requestUrl);
                 console.log(res);
-                if(res.status){
-                    this.readTime=res.data.read_time;
-                    this.publishTime=res.data.publish_time;
-                    this.translator=res.data.translator.join(',');
-                    this.topicStr=res.data.topic_str;
+                if(res.code==0){
+                    this.publishTime=res.data.publishTime;
+                    // this.translator=res.data.translator.join(',');
+                    this.topicStr=res.data.topicKey.join(',');
                     this.title=res.data.title;
                     this.url=res.data.url;
-                    this.contentHtml=res.data.content_html;
+                    this.contentHtml=res.data.contentHtml;
                     this.authors=res.data.authors.join(',');
                     this.title=res.data.title;
                 }
