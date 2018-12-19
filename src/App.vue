@@ -3,7 +3,7 @@
     <el-container>
       <el-header>
         <div>
-          <el-input placeholder="请输入搜索内容" style="width: 25rem;margin-right: 1rem;" v-model="searchContent" @keyup.enter.native="search">
+          <el-input placeholder="请输入搜索内容" style="width: 20%;min-width:13rem;margin-right: 1rem;" v-model="searchContent" @keyup.enter.native="search">
           </el-input><el-button type="primary" round v-on:click="search">搜 索</el-button>
         </div>
       </el-header>

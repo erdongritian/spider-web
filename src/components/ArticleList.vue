@@ -4,7 +4,7 @@
             <div class="el-table__header-wrapper">
             <table cellspacing="0" cellpadding="0" border="0" class="el-table__header" style="width: 100%;">
                 <thead class="has-gutter">
-                <tr class=""><th class="is-leaf"><div class="cell">近期文章</div></th>
+                <tr class=""><th class="is-leaf"><div class="cell">近期新闻</div></th>
                 </tr></thead>
             </table>
         </div>
@@ -16,9 +16,9 @@
                 <td>
                     <div class="cell">
                         <div>
-                        <div class="article_thumb_image"  v-if="art.iconUrl">
-                            <img :src="art.iconUrl">
-                        </div>
+                        <!--<div class="article_thumb_image"  v-if="art.iconUrl" style="display: none;">-->
+                            <!--<img :src="art.iconUrl">-->
+                        <!--</div>-->
 
                         <div class="aricle_item_info">
                             <div class="title">
@@ -154,8 +154,8 @@
         -moz-box-shadow: 3px 3px 6px #666;
         box-shadow: 3px 3px 6px #666;
 
-        width: 60%;
-        margin-left:20%;
+        width: 98%;
+        margin-left:1%;
     }
     .aricle_item_info {
         margin-left: 4px;
